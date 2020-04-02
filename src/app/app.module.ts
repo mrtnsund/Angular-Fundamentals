@@ -8,6 +8,8 @@ import { NavBarComponent } from './nav/navbar.component';
 import { EventService } from './events/shared/event.service';
 import { ToastrService } from './common/toastr.service';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { appRoutes } from 'src/routes';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,11 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
     EventsListComponent,
     EventThumbnailComponent,
     NavBarComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     EventService,
@@ -26,4 +29,6 @@ import { EventDetailsComponent } from './events/event-details/event-details.comp
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
